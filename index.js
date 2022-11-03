@@ -27,8 +27,12 @@ import {
   
         tasksContainer.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
-      <p>${task.description}</p>
+      <p class="h5">Nome:${task.nome}</p>
+      <p>Sobrenome:${task.sobrenome}</p>
+      <p>Email:${task.email}</p>
+      <p>CPF:${task.cpf}</p>
+      <p>Telefone:${task.telefone}</p>
+
       <div>
         <button class="btn btn-primary btn-delete" data-id="${doc.id}">
           🗑 Delete
@@ -57,8 +61,11 @@ import {
           try {
             const doc = await getTask(e.target.dataset.id);
             const task = doc.data();
-            taskForm["task-title"].value = task.title;
-            taskForm["task-description"].value = task.description;
+            taskForm["nome"].value = task.nome;
+            taskForm["sobrenome"].value = task.sobrenome;
+            taskForm["email"].value = task.email;
+            taskForm["cpf"].value = task.cpf;
+            taskForm["telefone"].value = task.telefone;
   
             editStatus = true;
             id = doc.id;
@@ -74,16 +81,24 @@ import {
   taskForm.addEventListener("submit", async (e) => {
     e.preventDefault();
   
-    const title = taskForm["task-title"];
-    const description = taskForm["task-description"];
+    const nome = taskForm["nome"];
+    const sobrenome = taskForm["sobrenome"];
+    const email = taskForm["email"];
+    const cpf = taskForm["cpf"];
+    const telefone = taskForm["telefone"];
   
     try {
       if (!editStatus) {
-        await saveTask(title.value, description.value);
+        await saveTask(nome.value, sobrenome.value, email.value, cpf.value, telefone.value );
       } else {
         await updateTask(id, {
-          title: title.value,
-          description: description.value,
+          nome: nome.value,
+          sobrenome: sobrenome.value,
+          email: email.value,
+          cpf: cpf.value,
+          telefone: telefone.value,
+
+
         });
   
         editStatus = false;

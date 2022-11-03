@@ -21,26 +21,52 @@
         <div class="col-md-6">
           <div class="card">
             <div class="card-body">
-              <h1 class="h4">Add Task</h1>
+              <h1 class="h2"><strong> Cadastro</strong></h1>
 
               <form id="task-form">
-                <label for="title">Title:</label>
+
+                <label for="nome">Nome:</label>
                 <input
                   type="text"
-                  id="task-title"
+                  id="nome"
                   class="form-control mb-3"
                   class="My First Title"
-                  placeholder="Task Title"
+                  placeholder="Ex. João"
                   autofocus
                 />
 
-                <label for="description">Description:</label>
-                <textarea
-                  id="task-description"
+                <label for="sobrenome">Sobrenome:</label>
+                <input
+                  id="sobrenome"
                   rows="3"
                   class="form-control mb-3"
-                  placeholder="Task Description"
-                ></textarea>
+                  placeholder="Ex: Martins"
+                ></input>
+
+                <label for="email">Email:</label>
+                <input
+                  id="email"
+                  rows="3"
+                  class="form-control mb-3"
+                  placeholder="Ex: João@gmail.com"
+                ></input>
+
+                <label for="cpf">CPF:</label>
+                <input
+                  id="cpf"
+                  rows="3"
+                  class="form-control mb-3"
+                  placeholder="Ex: 345.332..."
+                ></input>
+
+                <label for="telefone">Telefone:</label>
+                <input
+                  id="telefone"
+                  rows="3"
+                  class="form-control mb-3"
+                  placeholder="EX: (12) 991367542"
+                ></input>
+
 
                 <button class="btn btn-primary" id="btn-task-form">Save</button>
               </form>
